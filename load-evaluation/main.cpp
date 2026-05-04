@@ -23,7 +23,7 @@ const double INF = 1e18;
 
 // 算法超参数
 double ALPHA_SYS = 0.95;    // 系统可靠性目标 alpha
-double DETOUR_FACTOR = 0.30; // 允许绕路 50%
+double DETOUR_FACTOR = 0.30; // 允许绕路 30%
 double THETA = 0.1;         // Linear choice model 分散度参数
 double LEARNING_RATE = 0.01;
 int GD_ITERATIONS = 100;    // 梯度下降最大迭代次数
@@ -43,11 +43,9 @@ double norm_cdf(double x) {
     return 0.5 * erfc(-x * sqrt(0.5));
 }
 
-// 极其精确的逆正态分布 CDF 近似 (Acklam's approximation)
 double inv_norm_cdf(double p) {
     if (p <= 0.0) return -INF;
     if (p >= 1.0) return INF;
-    // 简化的分段近似，实际工程可用 Boost 库
     double t = sqrt(-2.0 * log(min(p, 1.0 - p)));
     double num = 2.515517 + 0.802853 * t + 0.010328 * t * t;
     double den = 1.0 + 1.432788 * t + 0.189269 * t * t + 0.001308 * t * t * t;
