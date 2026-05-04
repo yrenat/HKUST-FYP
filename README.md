@@ -1,4 +1,4 @@
-# Project Overview {#project-overview .unnumbered}
+# Project Overview
 
 This repository contains two main parts:
 
