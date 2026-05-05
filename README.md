@@ -1,6 +1,6 @@
 # Project Overview
 
-This repository contains two main parts:
+This is the Final Year Project (FYP) from Yichen Ren and Yixuan Fu. This repository contains two main parts:
 
 1.  **Travel Time Estimation**
 
